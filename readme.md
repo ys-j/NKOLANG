@@ -8,7 +8,7 @@ Brainfuck-like Programming Language (Interpreter)
 ## Brainfuckとの対応
 ※変更するかもしれません。
 
-| Brainfuck | NKODICE | 説明 |
+| Brainfuck | NKOLANG | 説明 |
 | --------- | ------- | ---- |
 | + | ち | ポインタの指す値をインクリメントする |
 | - | ん | ポインタの指す値をデクリメントする |
