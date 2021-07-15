@@ -226,7 +226,6 @@ int main(int argc, char* argv[]) {
 
 	int rslt = 0;
 
-
 	if (argc < 2){
 		cerr << "Error: No argument." << endl;
 		return -1;
