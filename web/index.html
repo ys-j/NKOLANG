@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang=en>
+<meta charset=utf-8>
+<meta name=viewport content="width=device-width,initial-scale=1.0">
+<link rel=stylesheet href=index.css>
+<title data-l10n=NKOLANG_Interpreter>NKOLANG Interpeter</title>
+<header>
+	<h1 data-l10n=NKOLANG_Interpreter>NKOLANG Interpeter</h1>
+	<div>
+		<a href=//github.com/ys-j/NKOLANG>GitHub</a>
+	</div>
+</header>
+<aside id=sidebar>
+	<label>
+		<input type=checkbox id=assist class=toggle value=collapse-2 checked>
+		<span data-l10n=Input>Symbol</span>
+		<span class=hide-3>
+			<span data-l10n=Assistant>Input Assistant</span>
+			<small data-l10n=InputAssistant_Description>(Convert inputted symbol to NKO char automatically.)</small>
+		</span>
+	</label>
+	<br>
+	<label>
+		<input type=checkbox class=toggle value=collapse-3 checked>
+		<span data-l10n=Desc>Desc</span><span class=hide-3 data-l10n=show>ription</span>
+	</label>
+	<table id=table>
+		<caption data-l10n=Quick_Reference>Quick Reference</caption>
+		<thead>
+			<tr><th data-l10n=Char>Char<th data-l10n=Sym>Sym<th data-l10n=Description>Description
+		<tbody>
+			<tr><th><code>こ</code><td class=c><code>&gt;</code><td data-l10n=Increment_pointer>Increment the pointer 
+			<tr><th><code>う</code><td class=c><code>&lt;</code><td data-l10n=Decrement_pointer>Decrement the pointer
+			<tr><th><code>ち</code><td class=c><code>+</code><td data-l10n=Increment_byte>Increment the byte at the pointer
+			<tr><th><code>ん</code><td class=c><code>-</code><td data-l10n=Decrement_byte>Decrement the byte at the pointer
+			<tr><th><code>お</code><td class=c><code>[</code><td data-l10n=Begin_loop>If the byte at the pointer is 0, &NewLine;jump forward to the command after the matching `ま`
+			<tr><th><code>ま</code><td class=c><code>]</code><td data-l10n=End_loop>Jump backward to the matching `お`
+			<tr><th><code>ぽ</code><td class=c><code>.</code><td data-l10n=Output_byte>Output the byte at the pointer
+			<tr><th><code>！</code><td class=c><code>,</code><td data-l10n=Input_byte>Input the byte at the pointer
+	</table>
+</aside>
+<hr>
+<form name=run>
+	<textarea name=code spellcheck=false></textarea>
+	<div>
+		<button class=primary value=run data-l10n=Run>Run!</button>
+		<button value=reset data-l10n=Reset>Reset</button>
+		<button value=2nko data-l10n=Convert_to_NKO>Convert to NKOLANG format</button>
+		<button value=2bf data-l10n=Convert_to_BF>Convert to Brainfuck format</button>
+	</div>
+	<textarea class=output name=output readonly tabindex=-1></textarea>
+</form>
+<script src=index.js></script>
+<script src=l10n.js></script>

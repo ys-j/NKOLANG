@@ -25,9 +25,9 @@ enum class NkoCommand : unsigned short {
 	Output = u'ぽ',
 	Input = u'！',
 };
-constexpr unsigned char ORDER_LEN = 2;
+constexpr unsigned char BYTE_LEN = 2;
 
-int run(string file_path, unsigned short memory_size) {
+int run(string file_path, unsigned int memory_size) {
 
 	unsigned char memory[memory_size];
 	unsigned int ptr = 0;
@@ -69,7 +69,7 @@ int run(string file_path, unsigned short memory_size) {
 				if (memory[ptr] == 0) {
 					int depth = 1;
 					while (depth > 0) {
-						code_ptr += ORDER_LEN;
+						code_ptr += BYTE_LEN;
 						if (code_ptr >= code_len){
 							cerr << "Error: Lack loop-end." << endl;
 							return -1;
@@ -93,7 +93,7 @@ int run(string file_path, unsigned short memory_size) {
 					cerr << "Error: Lack loop-begin." << endl;
 					return -1;
 				}
-				code_ptr = loops.top() - ORDER_LEN;
+				code_ptr = loops.top() - BYTE_LEN;
 				loops.pop();
 				break;
 			case static_cast<unsigned short>(NkoCommand::Output):
@@ -103,7 +103,7 @@ int run(string file_path, unsigned short memory_size) {
 				memory[ptr] = getchar();
 				break;
 		}
-		code_ptr += ORDER_LEN;
+		code_ptr += BYTE_LEN;
 	}
 
 	return 0;
