@@ -37,6 +37,6 @@ nkoファイルはUTF-16(LE)で作成してください。変換するbfファ�
 
 ## Webインタープリタ
 
-[GitHub Page](//ys-j.github.io/NKOLANG/web/)
+[GitHub Page](//ys-j.github.io/NKOLANG/)
 
 ※画面制御は ␛[`r`;`c`H （カーソルを`r`行`c`列に移動）のみ確認しています。他は不具合があると思います。
