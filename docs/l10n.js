@@ -78,6 +78,7 @@ for (const acceptable of acceptables) {
 	}
 }
 if (target) {
+	document.documentElement.lang = target;
 	const elements = /** @type {NodeListOf<HTMLElement>} */ (document.querySelectorAll('[data-l10n]'));
 	for (const elem of elements) {
 		const l10nId = elem.dataset.l10n;
