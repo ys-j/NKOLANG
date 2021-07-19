@@ -67,9 +67,7 @@ function assistInput(e) {
 		e.preventDefault();
 		const textarea = /** @type {HTMLTextAreaElement} */ (e.target);
 		const cursor = textarea.selectionStart;
-		const before = textarea.value.substr(0, cursor);
-		const after = textarea.value.substr(cursor);
-		textarea.value = before + bfNkoMap.get(e.key) + after;
+		textarea.setRangeText(bfNkoMap.get(e.key) || '', cursor, cursor, "end");
 	}
 }
 form.addEventListener("submit", e => {
